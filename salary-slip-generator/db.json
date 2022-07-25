@@ -5,44 +5,40 @@
       "firstName": "mithilesh",
       "lastName": "shah",
       "email": "mithilesh@gmail.com",
-      "mobile": "mithilesh",
-      "govtId": "Helo",
-      "address": "sdfsdfdsf",
-      "dob": "2022-07-20T18:30:00.000Z",
-      "profile": {}
+      "mobile": 8305990103,
+      "govtId": "dsfsdf",
+      "address": "sdfdsf",
+      "dob": "2022-07-06T18:30:00.000Z"
     },
     {
       "id": 2,
-      "firstName": "mithilesh",
+      "firstName": "mithilesh sah",
       "lastName": "shah",
       "email": "mithilesh1@gmail.com",
-      "mobile": "mithilesh",
-      "govtId": "6767676767",
-      "address": "67677676767",
-      "dob": "2022-07-20T18:30:00.000Z",
-      "profile": {}
+      "mobile": 8305990101,
+      "govtId": "dsfsdf11111",
+      "address": "sdfdsf1111",
+      "dob": "2022-07-06T18:30:00.000Z"
     },
     {
       "id": 3,
-      "firstName": "mithlesh",
+      "firstName": "rajesh",
       "lastName": "shah",
-      "email": "mithilesh@gmail.com",
-      "mobile": "mithlesh",
-      "govtId": "sdfsdf",
+      "email": "rajesh@gmail.com",
+      "mobile": 7878787878,
+      "govtId": "sdfdsf",
       "address": "sdfsdf",
-      "dob": "2022-07-20T18:30:00.000Z",
-      "profile": {}
+      "dob": "2022-07-07T18:30:00.000Z"
     },
     {
       "id": 4,
-      "firstName": "mithi",
-      "lastName": "shah",
-      "email": "mithielsh@gmail.com",
-      "mobile": "mithi",
-      "govtId": "345435345",
-      "address": "sdfsdf",
-      "dob": "2022-07-06T18:30:00.000Z",
-      "profile": {}
+      "firstName": "sdlfhsdfsdf",
+      "lastName": "sdfsdfsd",
+      "email": "a@gmaill.com",
+      "mobile": 7878787888,
+      "govtId": "hgjgh",
+      "address": "ghjghj",
+      "dob": "2022-07-14T18:30:00.000Z"
     }
   ]
 }

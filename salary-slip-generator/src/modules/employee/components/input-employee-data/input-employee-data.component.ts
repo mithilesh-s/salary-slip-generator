@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-input-employee-data',
@@ -40,13 +41,10 @@ export class InputEmployeeDataComponent implements OnInit {
   get dob(){
     return this.basicInfoFormGroup.get('dob');
   }
-  get profile(){
-    return this.basicInfoFormGroup.get('profile');
-  }
 
 
 
-  constructor(private _formBuilder: FormBuilder,private http:HttpClient) {}
+  constructor(private _formBuilder: FormBuilder, private _employeeService:EmployeeService) {}
 
 
   ngOnInit(): void {
@@ -59,20 +57,13 @@ export class InputEmployeeDataComponent implements OnInit {
 
     this.basicInfoFormGroup=this._formBuilder.group({
       govtId:['',[Validators.required]],
-      profile:['',[Validators.required]],
       dob:['',[Validators.required]],
       address:['',[Validators.required]],
     })
     this.maxDate = new Date()
 
-   this.http.get('http://localhost:3000/employees').subscribe(res=>{
-    this.employees=res;
-    console.log(this.employees);
-    
-  
-    
-   })
-
+   
+  this.getEmployee()
 
   }
 
@@ -93,35 +84,30 @@ export class InputEmployeeDataComponent implements OnInit {
         firstName:this.personalInfoFormGroup.value.firstName,
         lastName:this.personalInfoFormGroup.value.lastName,
         email:this.personalInfoFormGroup.value.email,
-        mobile:this.personalInfoFormGroup.value.firstName,
+        mobile:this.personalInfoFormGroup.value.mobile,
         govtId:this.basicInfoFormGroup.value.govtId,
         address:this.basicInfoFormGroup.value.address,
         dob:this.basicInfoFormGroup.value.dob,
-        profile:this.basicInfoFormGroup.value.profile,
+        
       }
+
       this.addEmployee(employee)
       
     }
   }
+ 
+   addEmployee(employee:any){
+    this._employeeService.addEmployee(employee)
+   }
 
-  addEmployee(employee:any){
-      this.http.post('http://localhost:3000/employees',employee).subscribe(res=>{
-        console.log('successfully added');
-        
-      },
-      err=>{
-        console.log('something went');
-        
-      })
-  }
+   getEmployee(){
+    this._employeeService.getEmployee().subscribe(res=>{
+      this.employees=res;
+      console.log(this.employees);
+      
+     })
+   }
 
-  emailVerification(){
-    this.employees.forEach( (element:any)=> {
-      if(element.email==this.personalInfoFormGroup.value.email){
-        alert('email already exist')
-      }
-    });
-  }
 
   
 

@@ -16,7 +16,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label><b>Email</b></mat-label>
-          <input type="email" formControlName="email" matInput placeholder="Enter your email" (change)="emailVerification()">
+          <input type="email" formControlName="email" matInput placeholder="Enter your email">
           <mat-error *ngIf="email?.errors?.['required']">Email is required</mat-error>
           <mat-error *ngIf="email?.errors?.['email']">Email is invalid</mat-error>
         </mat-form-field>
@@ -43,15 +43,7 @@
           <input type="text" formControlName="govtId" matInput placeholder="Enter your any Govt Id">
           <mat-error *ngIf="govtId?.errors?.['required']">Govt Id is required</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label><b>Profile pic</b></mat-label>
-          <ngx-mat-file-input formControlName="profile" accept=".png, .jpg, .jpeg">
-           
-            <mat-icon ngxMatFileInputIcon>backup</mat-icon>
-          </ngx-mat-file-input>
-          
-          <mat-error *ngIf="profile?.errors?.['required']">Profile pic is required</mat-error>
-        </mat-form-field>
+       
 
         <mat-form-field appearance="outline">
           <mat-label><b>Date of birth</b></mat-label>
@@ -74,3 +66,11 @@
     </form>
   </mat-step>
 </mat-stepper>
+
+<p *ngFor="let emp of employees">
+  <span>First Name: {{emp.firstName}}</span>
+  <br>
+  <span>Last Name: {{emp.lastName}}</span>
+  <br>
+  <span>EmaIl: {{emp.email}}</span>
+</p>

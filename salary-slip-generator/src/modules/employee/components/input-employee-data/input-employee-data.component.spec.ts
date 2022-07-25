@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployeeService } from '../../services/employee.service';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 import { InputEmployeeDataComponent } from './input-employee-data.component';
 
@@ -8,7 +11,13 @@ describe('InputEmployeeDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputEmployeeDataComponent ]
+      declarations: [ InputEmployeeDataComponent ],
+      imports:[
+        FormsModule, 
+        ReactiveFormsModule,
+        HttpClientTestingModule
+      ],
+      providers:[EmployeeService]
     })
     .compileComponents();
 
