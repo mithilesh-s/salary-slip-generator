@@ -1,37 +1,48 @@
-import { Observable } from "rxjs/internal/Observable";
 import { Employee } from "src/modules/employee/Employee";
 
-export class MockEmployeeService {
+  export const mockEmpArray:Employee[]= [
+    {
+      id: 1,
+      firstName: 'mithilesh get',
+      lastName: 'shah',
+      email: 'mithilesh@gmail.com',
+      mobile: 8888888888,
+      govtId: 'Helo',
+      address: 'sdfsdfdsf',
+      dob: '2022-07-20T18:30:00.000Z',
+    },
+    {
+      id: 2,
+      firstName: 'mithilesh get',
+      lastName: 'shah',
+      email: 'mithilesh1@gmail.com',
+      mobile: 7878787878,
+      govtId: '6767676767',
+      address: '67677676767',
+      dob: '2022-07-20T18:30:00.000Z',
+    },
+  ]
+
+  export const mockEmp={
+    id: 1000,
+    firstName: 'mockName',
+    lastName: 'shah',
+    email: 'mithilesh@gmail.com',
+    mobile: 8888888888,
+    govtId: 'Helo',
+    address: 'sdfsdfdsf',
+    dob: '2022-07-20T18:30:00.000Z',
+  }
+  export const updatedMockEmp={
+    id: 1000,
+    firstName: 'mockNgame update',
+    lastName: 'shah',
+    email: 'mithilesh@gmail.com',
+    mobile: 8888888888,
+    govtId: 'Helo',
+    address: 'sdfsdfdsf',
+    dob: '2022-07-20T18:30:00.000Z',
+  }
 
 
 
-    addEmployee(employee: any) {
-
-    }
-
-    getEmployee() {
-        const dummyEmployees:Employee[]=[
-            {
-              "id": 1,
-              "firstName": "mithilesh",
-              "lastName": "shah",
-              "email": "mithilesh@gmail.com",
-              "mobile": 8305990103,
-              "govtId": "dsfsdf",
-              "address": "sdfdsf",
-              "dob": "2022-07-06T18:30:00.000Z"
-            },
-            {
-              "id": 2,
-              "firstName": "mithilesh sah",
-              "lastName": "shah",
-              "email": "mithilesh1@gmail.com",
-              "mobile": 8305990101,
-              "govtId": "dsfsdf11111",
-              "address": "sdfdsf1111",
-              "dob": "2022-07-06T18:30:00.000Z"
-            }
-          ]
-        return dummyEmployees;
-    }
-}

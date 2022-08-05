@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card shadow">
+        <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" [(ngModel)]="userName" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" id="showDiv" (click)="showDiv()">Show DIV</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <div *ngIf="isClicked"  id="customDiv" appCustom [userInfo]="userName">{{userName }}</div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

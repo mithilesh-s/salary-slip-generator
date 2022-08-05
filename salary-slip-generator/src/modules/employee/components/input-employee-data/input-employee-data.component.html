@@ -1,5 +1,5 @@
 <mat-stepper linear #stepper>
-  
+
   <mat-step [stepControl]="personalInfoFormGroup">
     <form [formGroup]="personalInfoFormGroup" (ngSubmit)="submitPersonalInfoForm()">
       <ng-template matStepLabel>Fill out your personal information</ng-template>
@@ -43,7 +43,7 @@
           <input type="text" formControlName="govtId" matInput placeholder="Enter your any Govt Id">
           <mat-error *ngIf="govtId?.errors?.['required']">Govt Id is required</mat-error>
         </mat-form-field>
-       
+
 
         <mat-form-field appearance="outline">
           <mat-label><b>Date of birth</b></mat-label>
@@ -60,17 +60,21 @@
         </mat-form-field>
       </div>
       <div>
-        <button type="submit" mat-raised-button color="primary">Submit</button>
+        <button type="submit" mat-raised-button color="primary" id="submitBtn" routerLink="/employee/show-data" >Submit</button>
         <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
       </div>
     </form>
   </mat-step>
 </mat-stepper>
 
-<p *ngFor="let emp of employees">
-  <span>First Name: {{emp.firstName}}</span>
-  <br>
-  <span>Last Name: {{emp.lastName}}</span>
-  <br>
-  <span>EmaIl: {{emp.email}}</span>
-</p>
+
+<!-- <div class="table" *ngFor="let emp of employees; let i=index">
+  <span><b>Id:</b> {{emp.id}}</span>
+  <span style="margin-left: 5px;"><b>First Name:</b> {{emp.firstName}}</span>
+  <span style="margin-left: 5px;"><b>Last Name:</b> {{emp.lastName}}</span>
+  <span style="margin-left: 5px;"><b>EmaIl:</b> {{emp.email}}</span>
+  <button mat-raised-button color="accent" id="deleteEmployee" (click)="deleteEmployee(emp.id)">Delete</button>
+  <button mat-raised-button color="primary" class="updateEmployee" (click)="updateEmployee(i)">Update</button>
+
+
+</div> -->

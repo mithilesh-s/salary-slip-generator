@@ -1,44 +1,24 @@
 {
   "employees": [
     {
-      "id": 1,
-      "firstName": "mithilesh",
+      "id": 22,
+      "firstName": "sushama",
       "lastName": "shah",
-      "email": "mithilesh@gmail.com",
-      "mobile": 8305990103,
-      "govtId": "dsfsdf",
-      "address": "sdfdsf",
-      "dob": "2022-07-06T18:30:00.000Z"
+      "email": "sushama@gmai.com",
+      "mobile": "6565656565",
+      "govtId": "sfhdsf",
+      "address": "sdfhdsf",
+      "dob": "12-12-22"
     },
     {
-      "id": 2,
-      "firstName": "mithilesh sah",
-      "lastName": "shah",
-      "email": "mithilesh1@gmail.com",
-      "mobile": 8305990101,
-      "govtId": "dsfsdf11111",
-      "address": "sdfdsf1111",
-      "dob": "2022-07-06T18:30:00.000Z"
-    },
-    {
-      "id": 3,
-      "firstName": "rajesh",
-      "lastName": "shah",
-      "email": "rajesh@gmail.com",
+      "id": 24,
+      "firstName": "fdssdf",
+      "lastName": "sdfsdf",
+      "email": "dfsdfsdfsdf@sdfsdf",
       "mobile": 7878787878,
-      "govtId": "sdfdsf",
-      "address": "sdfsdf",
-      "dob": "2022-07-07T18:30:00.000Z"
-    },
-    {
-      "id": 4,
-      "firstName": "sdlfhsdfsdf",
-      "lastName": "sdfsdfsd",
-      "email": "a@gmaill.com",
-      "mobile": 7878787888,
-      "govtId": "hgjgh",
-      "address": "ghjghj",
-      "dob": "2022-07-14T18:30:00.000Z"
+      "govtId": "123",
+      "address": "fds",
+      "dob": "2022-06-30T18:30:00.000Z"
     }
   ]
 }
