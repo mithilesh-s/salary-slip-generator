@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row mt-1">
+        <div class="col-md-6">
+            <button mat-raised-button color="primary" (click)="openDialog1()">Launch first dialog</button>
+        </div>
+        <div class="col-md-6">
+            <button mat-raised-button (click)="openDialog2('0ms', '0ms')">Open dialog without animation</button>
+            <button mat-raised-button (click)="openDialog2('3000ms', '1500ms')">Open dialog slowly</button>
+            
+        </div>
+    </div>
+</div>

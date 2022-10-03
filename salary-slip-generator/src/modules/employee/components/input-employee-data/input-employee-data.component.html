@@ -1,0 +1,80 @@
+<mat-stepper linear #stepper>
+
+  <mat-step [stepControl]="personalInfoFormGroup">
+    <form [formGroup]="personalInfoFormGroup" (ngSubmit)="submitPersonalInfoForm()">
+      <ng-template matStepLabel>Fill out your personal information</ng-template>
+      <div style="display: flex;flex-direction: column;">
+        <mat-form-field appearance="outline">
+          <mat-label><b>First Name</b></mat-label>
+          <input type="text" formControlName="firstName" matInput placeholder="Enter your first name">
+          <mat-error *ngIf="firstName?.errors?.['required']">First Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label><b>Last Name</b></mat-label>
+          <input type="text" formControlName="lastName" matInput placeholder="Enter your last name">
+          <mat-error *ngIf="lastName?.errors?.['required']">Last Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label><b>Email</b></mat-label>
+          <input type="email" formControlName="email" matInput placeholder="Enter your email">
+          <mat-error *ngIf="email?.errors?.['required']">Email is required</mat-error>
+          <mat-error *ngIf="email?.errors?.['email']">Email is invalid</mat-error>
+        </mat-form-field>
+        <!-- <span style="color: red; margin-top: -20px;" *ngIf="emailAlreadyExist">Email is alrady exist</span> -->
+        <mat-form-field appearance="outline">
+          <mat-label><b>Mobile Number</b></mat-label>
+          <input type="number" formControlName="mobile" matInput placeholder="Enter your mobile number" minlength="10">
+          <mat-error *ngIf="mobile?.errors?.['required']">Mobile number is required</mat-error>
+          <mat-error *ngIf="mobile?.errors?.['pattern']">Mobile number is invalid</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="basicInfoFormGroup">
+    <form [formGroup]="basicInfoFormGroup" (ngSubmit)="submitBasicInfoForm()">
+      <ng-template matStepLabel>Fill out your basic information</ng-template>
+      <div style="display: flex;flex-direction: column;">
+        <mat-form-field appearance="outline">
+          <mat-label><b>Govt ID</b></mat-label>
+          <input type="text" formControlName="govtId" matInput placeholder="Enter your any Govt Id">
+          <mat-error *ngIf="govtId?.errors?.['required']">Govt Id is required</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label><b>Date of birth</b></mat-label>
+          <input matInput formControlName="dob" [max]="maxDate" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="dob?.errors?.['required']">Date of birth is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label><b>Address</b></mat-label>
+          <input type="text" formControlName="address" matInput placeholder="Enter your address">
+          <mat-error *ngIf="address?.errors?.['required']">Address is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button type="submit" mat-raised-button color="primary" id="submitBtn" routerLink="/employee/show-data" >Submit</button>
+        <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>
+
+
+<!-- <div class="table" *ngFor="let emp of employees; let i=index">
+  <span><b>Id:</b> {{emp.id}}</span>
+  <span style="margin-left: 5px;"><b>First Name:</b> {{emp.firstName}}</span>
+  <span style="margin-left: 5px;"><b>Last Name:</b> {{emp.lastName}}</span>
+  <span style="margin-left: 5px;"><b>EmaIl:</b> {{emp.email}}</span>
+  <button mat-raised-button color="accent" id="deleteEmployee" (click)="deleteEmployee(emp.id)">Delete</button>
+  <button mat-raised-button color="primary" class="updateEmployee" (click)="updateEmployee(i)">Update</button>
+
+
+</div> -->

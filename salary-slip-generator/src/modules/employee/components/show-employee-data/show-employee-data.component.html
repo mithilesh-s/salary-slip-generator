@@ -1,0 +1,27 @@
+<button class="btn btn-success" (click)="showData()" id="showData">Show Data</button>
+<mat-spinner *ngIf="loadData"></mat-spinner>
+<div *ngIf="!loadData" class="container mt-5">
+    <div class="row offset-md-1 mt-1" *ngFor="let emp of employees; let i=index">
+
+        <div class="col-md-2">
+            <span><b>Id:</b> {{emp.id}}</span>
+        </div>
+        <div class="col-md-2">
+            <span><b>First Name:</b> {{emp.firstName|TitleCasePipe}}</span>
+        </div>
+        <div class="col-md-2">
+            <span><b>Last Name:</b> {{emp.lastName|TitleCasePipe}}</span>
+        </div>
+        <div class="col-md-4">
+            <span><b>Email:</b> {{emp.email}}</span>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-danger btn-sm"  (click)="deleteEmployee(emp.id,i)">Delete</button>
+            <button class="btn btn-warning btn-sm" style="margin-left: 5px;"  (click)="updateEmployee(i)">Update</button>
+        </div>
+
+
+
+
+    </div>
+</div>
